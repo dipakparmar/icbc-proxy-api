@@ -23,12 +23,31 @@ export interface AppointmentDt {
 }
 
 /**
- * Represents a driver's license exam.
+ * Represents the code for a DL (Driver's License) Exam.
+ * This can be either the specific value "5-R-1" or any other string.
+ * @typedef {("5-R-1" | string)} DLExamCode
+ */
+export type DLExamCode = "5-R-1" | string;
+
+/**
+ * Represents a DL (Driver's License) Exam.
+ * @interface DlExam
  */
 export interface DlExam {
-  code: string
-  description: string
+  /**
+   * The code for the exam.
+   * @type {DLExamCode}
+   */
+  code: DLExamCode;
+
+  /**
+   * A description of the exam.
+   * @type {string}
+   */
+  description: string;
 }
+
+
 
 /**
  * Represents the structure of a login request.
