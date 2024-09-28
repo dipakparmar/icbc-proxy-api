@@ -24,10 +24,10 @@ export interface AppointmentDt {
 
 /**
  * Represents the code for a DL (Driver's License) Exam.
- * This can be either the specific value "5-R-1" or any other string.
- * @typedef {("5-R-1" | string)} DLExamCode
+ * This can be either the specific value "5-R-1" | "7-R-1"  or any other string.
+ * @typedef {("5-R-1" | "7-R-1" | string)} DLExamCode
  */
-export type DLExamCode = "5-R-1" | string;
+export type DLExamCode = "5-R-1" | "7-R-1" | string;
 
 /**
  * Represents a DL (Driver's License) Exam.
@@ -66,6 +66,42 @@ export interface NearestPositionsRequest {
   lat: number;
   examType: string;
   startDate: string;
+}
+
+/**
+ * Represents a response for the nearest positions query.
+ */
+export interface NearestPosition {
+  /** The distance to the position */
+  distance: number;
+  /** The position details */
+  pos: Pos;
+}
+
+/**
+ * Represents a position (usually a testing center or office).
+ */
+export interface Pos {
+  /** The full address of the position */
+  address: string;
+  /** Additional address information */
+  address1: string;
+  /** The agency associated with this position */
+  agency: string;
+  /** The city where the position is located */
+  city: string;
+  /** The latitude coordinate of the position */
+  lat: number;
+  /** The longitude coordinate of the position */
+  lng: number;
+  /** The unique identifier for the position */
+  posId: number;
+  /** The postal code of the position */
+  postcode: string;
+  /** The province where the position is located */
+  province: string;
+  /** The URL associated with this position */
+  url: string;
 }
 
 /**
